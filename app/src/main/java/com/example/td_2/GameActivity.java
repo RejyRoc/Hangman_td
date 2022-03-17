@@ -2,6 +2,7 @@ package com.example.td_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -98,9 +99,12 @@ public class GameActivity extends AppCompatActivity {
         }else{
             // Minus the total of tries
             chans -= 1;
-
+            mChansText.setText(chans + " chans");
             if(chans<=0){
-                mChansText.setText(chans + " chans");
+                Intent replayIntent = new Intent(GameActivity.this,
+                        ReplayActivity.class);
+
+                startActivity(replayIntent);
             // Display a short message
             Toast.makeText(this, "Lèt ou tape a, pa nan mo a", Toast.LENGTH_SHORT).show();
             }
