@@ -98,9 +98,12 @@ public class GameActivity extends AppCompatActivity {
         }else{
             // Minus the total of tries
             chans -= 1;
-            mChansText.setText(chans + " chans");
+
+            if(chans<=0){
+                mChansText.setText(chans + " chans");
             // Display a short message
             Toast.makeText(this, "Lèt ou tape a, pa nan mo a", Toast.LENGTH_SHORT).show();
+            }
         }
 
         // Finally, display the new text.
